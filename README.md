@@ -1,6 +1,6 @@
 # element-sort
 
-matchsort, plugin for element
+sort, plugin for element
 
 ## Installation
 
