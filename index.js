@@ -14,13 +14,15 @@ module.exports = function (element) {
 
   element.prototype.sort = function (fn) {
     var el = this.el;
-    var arr = slice.call(el.children).sort(fn);
-    var frag = document.createDocumentFragment();
-    for (var i = 0; i < arr.length; i++) {
-      frag.appendChild(arr[i]);
+    var children = slice.call(el.children).sort(fn);
+    var len = children.length;
+    var i;
+    var fragment = document.createDocumentFragment();
+    for (i = 0; i < len; i += 1) {
+      fragment.appendChild(children[i]);
     }
-    el.appendChild(frag);
-    return el;
+    el.appendChild(fragment);
+    return this;
   };
 
   return element;
